@@ -1,0 +1,11 @@
+.course-card {
+  border: 2px solid #666;
+  width: 350px;
+  border-radius: 5px;
+}
+
+.course-card > * {
+  display: block;
+  width: 300px;
+  margin: auto;
+}

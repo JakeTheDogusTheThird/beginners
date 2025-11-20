@@ -1,9 +1,15 @@
 <div class="course-card">
   <div class="course-title">
-    <h2>{{id}} {{course.description}}</h2>
+    <h2>{{ id }} {{ course.description }}</h2>
   </div>
-  <img alt="Logo" [src]="course.iconUrl">
 
-  <div class="course-description">{{course.longDescription}}</div>
+  @if (course.id === 1) {
+  <h2>Course with id 1 detected</h2>
+  } @else if (course.iconUrl) {
+  <img alt="Logo" [src]="course.iconUrl" />
+  } @else {
+  <h2>No Image Available</h2>
+  }
+  <div class="course-description">{{ course.longDescription }}</div>
   <button (click)="onCourseViewed()">View Course</button>
 </div>

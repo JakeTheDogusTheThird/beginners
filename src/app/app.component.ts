@@ -18,4 +18,8 @@ export class AppComponent {
   onCourseSelected(course: Course): void {
     console.log(`Course clicked ${course.description}`);
   }
+
+  trackCourse(id: number, course: Course) {
+    return course.id;
+  } 
 }

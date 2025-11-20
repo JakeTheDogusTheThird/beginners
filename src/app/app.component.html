@@ -15,18 +15,12 @@
 </div>
 
 <div class="courses">
-  <app-course-card
+  @for (course of courses; track course.id) {
+    <app-course-card
     (courseSelected)="onCourseSelected($event)"
-    [course]="coreCourse"
-  ></app-course-card>
-  <app-course-card
-    (courseSelected)="onCourseSelected($event)"
-    [course]="rxjsCourse"
-  ></app-course-card>
-  <app-course-card
-    (courseSelected)="onCourseSelected($event)"
-    [course]="ngrxCourse"
-  ></app-course-card>
+    [course]="course"
+  />
+  }
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

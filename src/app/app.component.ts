@@ -14,9 +14,7 @@ import { Course } from './model/course';
 export class AppComponent {
   title = 'App Title';
 
-  coreCourse = COURSES[0];
-  rxjsCourse = COURSES[1];
-  ngrxCourse = COURSES[2];
+  courses: Course[] = COURSES;
 
   onCourseSelected(course: Course): void {
     console.log(`Course clicked ${course.description}`);

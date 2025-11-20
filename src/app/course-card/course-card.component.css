@@ -9,3 +9,15 @@
   width: 300px;
   margin: auto;
 }
+
+.course-card > button {
+  width: 150px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color:  #1976d2;
+  border-radius: 4px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

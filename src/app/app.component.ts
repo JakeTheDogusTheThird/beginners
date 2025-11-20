@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CourseCardComponent } from "./course-card/course-card.component";
+import { CourseCardComponent } from './course-card/course-card.component';
 import { COURSES } from '../db-data';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,13 @@ import { COURSES } from '../db-data';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = "App Title";
+  title = 'App Title';
+
   coreCourse = COURSES[0];
   rxjsCourse = COURSES[1];
   ngrxCourse = COURSES[2];
 
-  onLogoClicked() {
-    alert('Hello World');
+  onCourseSelected(course: Course): void {
+    console.log(`Course clicked ${course.description}`);
   }
 }

@@ -15,11 +15,20 @@
 </div>
 
 <div class="courses">
-  @for (course of courses; track course.id) {
+  @for (course of courses; track course.id; let id = $index; let count = $count;
+    let first = $first; let last = $last; let even = $even; let odd = $odd) {
     <app-course-card
-    (courseSelected)="onCourseSelected($event)"
-    [course]="course"
-  />
+      (courseSelected)="onCourseSelected($event)"
+      [course]="course"
+      [class.is-first]="first"
+      [class.is-last]="last"
+      [class.is-even]="even"
+      [class.is-odd]="odd"
+      [id]="id"
+    />
+  }
+  @empty {
+    <h1>No Courses Found</h1>
   }
 </div>
 

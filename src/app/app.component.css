@@ -1,7 +1,9 @@
 .courses { 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  width: 400px;
+  gap: 30px;
+  margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -24,3 +26,4 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+

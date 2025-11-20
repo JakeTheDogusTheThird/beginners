@@ -13,7 +13,6 @@ import { Course } from './model/course';
 })
 export class AppComponent {
   title = 'App Title';
-
   courses: Course[] = COURSES;
 
   onCourseSelected(course: Course): void {

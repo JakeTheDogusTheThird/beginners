@@ -7,13 +7,26 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-<h1>{{title}}</h1>
+<div class="title-header">
+  <img
+    class="logo"
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
+  />
+</div>
 
 <div class="courses">
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></app-course-card>
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></app-course-card>
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></app-course-card>
+  <app-course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="coreCourse"
+  ></app-course-card>
+  <app-course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="rxjsCourse"
+  ></app-course-card>
+  <app-course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="ngrxCourse"
+  ></app-course-card>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

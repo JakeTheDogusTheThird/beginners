@@ -1,11 +1,11 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Course } from '../model/course';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgStyle],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -29,5 +29,11 @@ export class CourseCardComponent {
     return {
       'beginner': this.course.category === 'BEGINNER'
     };
+  }
+
+  cardStyles() {
+    return {
+      'text-decoration': 'underline'
+    }
   }
 }

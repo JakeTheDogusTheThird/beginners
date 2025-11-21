@@ -1,5 +1,6 @@
+@if (course) {
 <div class="course-card" [ngClass]="cardClasses()">
-  <div class="course-title">
+  <div class="course-title" [ngStyle]="cardStyles()">
     <h2>{{ id }} {{ course.description }}</h2>
   </div>
 
@@ -11,3 +12,4 @@
   <div class="course-description">{{ course.longDescription }}</div>
   <button (click)="onCourseViewed()">View Course</button>
 </div>
+}

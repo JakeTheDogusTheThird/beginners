@@ -46,3 +46,10 @@
 .course-card.beginner {
   background: lightsalmon;
 }
+
+.category {
+  border: solid, 1px, green;
+  color: green;
+  background-color: lightgreen;
+  width: 100px;
+}

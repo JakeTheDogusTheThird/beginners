@@ -10,6 +10,27 @@
   <h2>No Image Available</h2>
   }
   <div class="course-description">{{ course.longDescription }}</div>
+
+  <div class="course-category">
+    @switch (course.category) { 
+      @case ("BEGINNER") {
+        <div class="category">Beginner</div>
+      }
+
+      @case ("INTERMEDIATE") {
+        <div class="category">Intermediate</div>
+      }
+
+      @case ("ADVANCED") {
+        <div class="category">Advanced</div>
+      }
+
+      @default {
+        <div class="category">Default</div>
+      }
+   }
+  </div>
+
   <button (click)="onCourseViewed()">View Course</button>
 </div>
 }

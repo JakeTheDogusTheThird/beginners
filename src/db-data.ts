@@ -39,7 +39,7 @@ export const COURSES: Course[] = [
       'https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png',
     longDescription:
       "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
-    category: 'BEGINNER',
+    category: 'UNKNOWN',
     lessonsCount: 10,
   },
   {

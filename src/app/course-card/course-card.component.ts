@@ -1,10 +1,11 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Course } from '../model/course';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -15,8 +16,18 @@ export class CourseCardComponent {
   @Output('courseSelected') courseSelected: EventEmitter<Course> =
     new EventEmitter();
 
-  public onCourseViewed(): void {
+  onCourseViewed(): void {
     console.log('Card Button Clicked');
     this.courseSelected.emit(this.course);
+  }
+
+  isImageVisible(): boolean {
+    return !!(this.course && this.course.iconUrl);
+  }
+
+  cardClasses() {
+    return {
+      'beginner': this.course.category === 'BEGINNER'
+    };
   }
 }

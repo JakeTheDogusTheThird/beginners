@@ -42,3 +42,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.course-card.beginner {
+  background: lightsalmon;
+}

@@ -13,7 +13,7 @@ import { Course } from './model/course';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'app Title with irregular Capitalization';
+  title: string = 'app Title with irregular Capitalization';
   courses: Course[] = COURSES;
   startDate: Date = new Date(2025, 0, 1);
 

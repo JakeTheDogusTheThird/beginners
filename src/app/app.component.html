@@ -14,24 +14,23 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
-<div>{{title | titlecase}}</div>
-<div>Start Date: {{startDate | date: "MMM/dd/YY"}}</div>
+<div>{{ title | titlecase }}</div>
+<div>Start Date: {{ startDate | date : "MMM/dd/YY" }}</div>
 
 <div class="courses">
   @for (course of courses; track course.id; let id = $index; let count = $count;
-    let first = $first; let last = $last; let even = $even; let odd = $odd) {
-    <app-course-card
-      (courseSelected)="onCourseSelected($event)"
-      [course]="course"
-      [class.is-first]="first"
-      [class.is-last]="last"
-      [class.is-even]="even"
-      [class.is-odd]="odd"
-      [id]="id"
-    />
-  }
-  @empty {
-    <h1>No Courses Found</h1>
+  let first = $first; let last = $last; let even = $even; let odd = $odd) {
+  <app-course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+    [class.is-first]="first"
+    [class.is-last]="last"
+    [class.is-even]="even"
+    [class.is-odd]="odd"
+    [id]="id"
+  />
+  } @empty {
+  <h1>No Courses Found</h1>
   }
 </div>
 

@@ -6,6 +6,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { COURSES } from '../db-data';
 import { Course } from './model/course';
 import { Observable } from 'rxjs';
+import { CoursesService } from './services/courses.service';
 
 @Component({
   selector: 'app-root',
@@ -26,9 +27,13 @@ export class AppComponent implements OnInit {
   courses?: Course[];
   startDate: Date = new Date(2025, 0, 1);
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private coursesService: CoursesService
+  ) {}
 
   ngOnInit(): void {
+    console.log(this.coursesService);
     const params: HttpParams = new HttpParams()
       .set('page', '1')
       .set('pageSize', '5');

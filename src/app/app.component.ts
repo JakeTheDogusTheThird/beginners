@@ -27,17 +27,10 @@ export class AppComponent implements OnInit {
   courses?: Course[];
   startDate: Date = new Date(2025, 0, 1);
 
-  constructor(
-    private http: HttpClient,
-    private coursesService: CoursesService
-  ) {}
+  constructor(private coursesService: CoursesService) {}
 
   ngOnInit(): void {
-    console.log(this.coursesService);
-    const params: HttpParams = new HttpParams()
-      .set('page', '1')
-      .set('pageSize', '5');
-    this.courses$ = this.http.get<Course[]>('/api/courses', { params });
+    this.courses$ = this.coursesService.loadServices();
   }
 
   onCourseSelected(course: Course): void {

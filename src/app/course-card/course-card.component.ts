@@ -14,7 +14,7 @@ export class CourseCardComponent implements OnInit {
   @Input({ required: true }) course!: Course;
   @Input({ required: true }) id!: number;
 
-  @Output('courseSelected') courseSelected: EventEmitter<Course> =
+  @Output('courseUpdated') courseEmitter: EventEmitter<Course> =
     new EventEmitter();
 
   constructor(private coursesService: CoursesService) {}
@@ -23,9 +23,8 @@ export class CourseCardComponent implements OnInit {
     console.log("Courses Service injected into course card " + this.coursesService); 
   }
 
-  onCourseViewed(): void {
-    console.log('Card Button Clicked');
-    this.courseSelected.emit(this.course);
+  onSaveClicked(description: string): void {
+    this.courseEmitter.emit({...this.course, description});
   }
 
   isImageVisible(): boolean {

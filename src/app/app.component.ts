@@ -33,8 +33,10 @@ export class AppComponent implements OnInit {
     this.courses$ = this.coursesService.loadServices();
   }
 
-  onCourseSelected(course: Course): void {
-    console.log(`Course clicked ${course.description}`);
+  save(course: Course): void {
+    this.coursesService.saveCourse(course).subscribe(() => {
+      console.log('course saved');
+    });
   }
 
   trackCourse(id: number, course: Course) {

@@ -22,7 +22,7 @@
   @for (course of courses; track course.id; let id = $index; let count = $count;
   let first = $first; let last = $last; let even = $even; let odd = $odd) {
   <app-course-card
-    (courseSelected)="onCourseSelected($event)"
+    (courseUpdated)="save($event)"
     [course]="course"
     [class.is-first]="first"
     [class.is-last]="last"

@@ -9,7 +9,9 @@
   } @else {
   <h2>No Image Available</h2>
   }
-  <div class="course-description">{{ course.longDescription }}</div>
+  <div class="course-description">
+    Edit Title: <input #courseTitle [value]="course.description">
+  </div>
 
   <div class="course-category">
     @switch (course.category) { 
@@ -31,6 +33,6 @@
    }
   </div>
 
-  <button (click)="onCourseViewed()">View Course</button>
+  <button (click)="onSaveClicked(courseTitle.value)">Save Course</button>
 </div>
 }

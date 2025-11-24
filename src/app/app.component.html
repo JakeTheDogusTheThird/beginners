@@ -14,6 +14,8 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
+<div>{{title | titlecase}}</div>
+<div>Start Date: {{startDate | date: "MMM/dd/YY"}}</div>
 
 <div class="courses">
   @for (course of courses; track course.id; let id = $index; let count = $count;

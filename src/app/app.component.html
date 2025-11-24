@@ -17,6 +17,7 @@
 <div>{{ title | titlecase }}</div>
 <div>Start Date: {{ startDate | date : "MMM/dd/YY" }}</div>
 
+@if(courses$ | async; as courses) {
 <div class="courses">
   @for (course of courses; track course.id; let id = $index; let count = $count;
   let first = $first; let last = $last; let even = $even; let odd = $odd) {
@@ -33,7 +34,7 @@
   <h1>No Courses Found</h1>
   }
 </div>
-
+}
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
